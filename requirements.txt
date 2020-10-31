@@ -11,7 +11,8 @@ crayons
 idna     
 joblib<0.15   
 jsonref     
-jsonschema    
+jsonschema 
+lxml   
 numpy
 pandas
 pycryptodomex   
