@@ -30,7 +30,9 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     ${CHROME_VERSION:-google-chrome-stable} \
   && rm /etc/apt/sources.list.d/google-chrome.list \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
-
+  
+# Install Oathtool:
+RUN apt-get -y install oathtool gnupg2
 
 ADD requirements.txt .
 RUN python3 -m pip install -r requirements.txt
