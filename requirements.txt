@@ -18,6 +18,7 @@ pandas
 pycryptodomex   
 pygsheets
 pyrsistent 
+py-oathtool
 pytz 
 PyYAML  
 selenium 
