@@ -11,6 +11,13 @@ SHELL [ "/bin/bash", "-c" ]
 ARG PYTHON_VERSION_TAG=3.8.0
 ARG LINK_PYTHON_TO_PYTHON3=1
 
+# Download latest listing of available packages:
+RUN apt-get -y update
+# Upgrade already installed packages:
+RUN apt-get -y upgrade
+# Install a Oathtool:
+RUN apt-get -y install oathtool gnupg2
+
 ## from https://hub.docker.com/r/selenium/node-chrome/dockerfile
 #============================================
 # Google Chrome
@@ -30,9 +37,6 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     ${CHROME_VERSION:-google-chrome-stable} \
   && rm /etc/apt/sources.list.d/google-chrome.list \
   && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
-  
-# Install Oathtool:
-RUN apt-get -y install gnupg2 oathtool 
 
 ADD requirements.txt .
 RUN python3 -m pip install -r requirements.txt
