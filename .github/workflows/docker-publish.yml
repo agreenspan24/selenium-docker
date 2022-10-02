@@ -64,6 +64,10 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: Get Date
+        id: date
+        run: echo "::set-output name=date::$(date +%s)"
+
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
       - name: Build and push Docker image
@@ -72,7 +76,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: agreenspan24/selenium2:latest,agreenspan24/selenium2:$(date +%s)
+          tags: agreenspan24/selenium2:latest,agreenspan24/selenium2:${{ steps.date.outputs.date }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
