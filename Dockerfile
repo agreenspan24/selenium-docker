@@ -18,6 +18,10 @@ RUN apt-get -y upgrade
 # Install a Oathtool:
 RUN apt-get -y install oathtool gnupg2
 
+# Install OpenJDK-11
+RUN apt-get install -y openjdk-11-jre-headless && \
+    apt-get clean;
+
 ## from https://hub.docker.com/r/selenium/node-chrome/dockerfile
 #============================================
 # Google Chrome
