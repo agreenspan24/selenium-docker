@@ -23,10 +23,11 @@ pyrsistent
 py-oathtool
 pytz
 PyYAML
+requests
 selenium==3.141.0
 setuptools
-requests
 six
+tabula-py
 urllib3
 webdriver-manager
 wheel
