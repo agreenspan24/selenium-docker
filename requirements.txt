@@ -15,6 +15,7 @@ lxml
 numpy
 oathtool
 pandas
+pandas_gbq
 prefect
 pycryptodomex
 pygsheets
