@@ -8,14 +8,17 @@ cloudpickle
 colorama
 configparser
 crayons
+google-cloud-bigquery
 idna
 jsonref
 jsonschema
 lxml
 numpy
 oathtool
+openpyxl
 pandas
 pandas_gbq
+parsons
 prefect
 pycryptodomex
 pygsheets
